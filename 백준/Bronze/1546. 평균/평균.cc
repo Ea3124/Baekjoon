@@ -17,9 +17,7 @@ int main() {
     }
     for(int k=0;k<N;k++){
         D[k] = C[k]/(float)grade_max * 100;
-    }
-    for (int m=0;m<N;m++){
-        sum = sum+D[m];
+        sum = sum+D[k];
     }
     mean = (float)sum/N;
         std::cout<<mean;
