@@ -1,25 +1,17 @@
 #include <iostream>
-
 int main() {
-    int  i, N;
-    int grade_max=0;
+    int N, grade_max = 0;
     std::cin >> N;
     int C[N];
-    float D[N];
-    float sum, mean;
-    for (i=0;i<N;i++) {
-        std::cin>>C[i];
+    float sum = 0, mean;
+    for (int i = 0; i < N; i++) {
+        std::cin >> C[i];
+        grade_max = std::max(grade_max, C[i]);
     }
-    for (int j=0 ; j<N ; j++) {
-        if (grade_max < C[j]) {
-            grade_max = C[j];
-        }
+    for (int k = 0; k < N; k++) {
+        sum += C[k] / static_cast<float>(grade_max) * 100;
     }
-    for(int k=0;k<N;k++){
-        D[k] = C[k]/(float)grade_max * 100;
-        sum = sum+D[k];
-    }
-    mean = (float)sum/N;
-        std::cout<<mean;
+    mean = sum / N;
+    std::cout << mean;
     return 0;
 }
