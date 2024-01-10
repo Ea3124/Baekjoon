@@ -6,7 +6,7 @@ int RecursiveSixFunction(int N) {
 
     int powerOfTen = 1, six_num = 0, compare = 0;
     std::string six_string = std::to_string(N);
-    
+
     for(int k=0;k<six_string.length();k++){
         if((N/powerOfTen)%10 == 6) six_num++;
         powerOfTen *= 10;
@@ -41,3 +41,4 @@ int main() {
     return 0;
 }
 
+// 만번째 탐색이 300만을 넘지 않는것을 인지하지 못해서 부루트포스를 사용못하고 풀었다. -> 더 메모리도 쓰고 낭비가 심해짐
