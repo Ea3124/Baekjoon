@@ -13,3 +13,7 @@ int main() {
     std::cout<<nBlank+1;
     return 0;
 }
+
+
+// 늘 항상 기억할것 : getline: 공백포함 입력
+// count : (시작지점, 종료지점, ' ')  --> 처음에서 끝까지 고백 개수 세기
