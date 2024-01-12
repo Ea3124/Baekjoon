@@ -1,27 +1,28 @@
 #include <iostream>
-#include <map>
+#include <unordered_set>
+#include <vector>
 
 int main() {
     int A, B, A_key;
 
     std::cin >> A;
-    std::map<int, int> card;
+    std::unordered_set<int> card;
 
     for (int i = 0; i < A; i++) {
         std::cin >> A_key;
-        card[A_key] = 0;
+        card.insert(A_key);
     }
-    std::cin >> B;
-    int MatchCard[B];
 
-    for (int j = 0; j < B; j++) {
-        std::cin >> MatchCard[j];
+    std::cin >> B;
+    std::vector<int> MatchCard(B);
+
+    for (int &match : MatchCard) {
+        std::cin >> match;
     }
-    for (int k=0;k<B;k++) {
-        if (card.find(MatchCard[k]) != card.end()) {
-            std::cout<<1<<' ';
-        }
-        else std::cout<<0<<' ';
+
+    for (const int &match : MatchCard) {
+        std::cout << (card.find(match) != card.end()) << ' ';
     }
+
     return 0;
 }
