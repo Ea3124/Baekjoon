@@ -12,9 +12,8 @@ int main(){
         CValues[A-1]++;
     }
     for(int j=0;j<10000;j++){
-        while(CValues[j] !=0) {
+        for(int k=CValues[j]; k>0; k--) {
             std::cout<<j+1<<'\n';
-            CValues[j]--;
         }
     }
 
