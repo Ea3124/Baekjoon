@@ -11,13 +11,13 @@
     std::string Alphabets;
     std::cin>>Alphabets;
     std::unordered_set<std::string> substrings;
-
-    for (int i = 1; i <= Alphabets.length(); i++) {
-        for (int j = 0; j <= Alphabets.length() - i; j++) {
+    for(int i=1;i<=Alphabets.length();i++){
+        int  j=0;
+        while(j<=(Alphabets.length()-i)) {
             substrings.insert(Alphabets.substr(j, i));
+            j++;
         }
     }
-    
     std::cout<<substrings.size();
     return 0;
 }
