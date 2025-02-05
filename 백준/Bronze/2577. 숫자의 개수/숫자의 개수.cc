@@ -6,15 +6,14 @@ int main(){
     cin.tie(0);
 
     int A,B,C,res;
-    int arr[11] = {};
+    int arr[10] = {};
     cin>>A>>B>>C;
 
     res = A*B*C;
 
-    for (int i=0; i<10; i++){
+    while (res>0){
         arr[(res % 10)]++;
         res = res/10;
-        if(res == 0) break;
     }
 
     for(int j=0; j<10; j++){
