@@ -6,7 +6,7 @@ int main(){
     cin.tie(0);
 
     int A,B,C,res;
-    int arr[11] = {0,0,0,0,0,0,0,0,0,0,0};
+    int arr[11] = {};
     cin>>A>>B>>C;
 
     res = A*B*C;
