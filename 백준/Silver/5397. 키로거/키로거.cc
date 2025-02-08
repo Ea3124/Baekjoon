@@ -1,38 +1,39 @@
-#include <iostream>
-#include <string>
-#include <list>
+// Authored by : BaaaaaaaaaaarkingDog
+// Co-authored by : -
+// http://boj.kr/49ff74ffdded4e0381138dabbaf8405b
+#include <bits/stdc++.h>
 using namespace std;
 
-int num;
-
 int main() {
-    cin>>num;
-    cin.ignore();
+  ios::sync_with_stdio(0);
+  cin.tie(0);
+  int n;
+
+  cin >> n;
+
+  for (int i = 0; i < n; i++) {
+    list<char> L = {};
     string s;
-    for (int i=0; i<num;i++){
-        list<char> L;
-        list<char>::iterator t = L.end(); // 고정이 아니라 가변 되어있어서?
+    auto p = L.begin();
 
-        cin>>s;
-        cin.ignore();
-        for(int item : s) {
-            if(item == '<') {
-                if (t != L.begin()) t--;
-            }
-            else if(item == '>') {
-                if (t != L.end()) t++;
-            }
-            else if(item == '-') {
-                if (t != L.begin()) {
-                    t--;
-                    t = L.erase(t);
-                }
-            }
-            else L.insert(t, item);
+    cin >> s;
+    for (auto c : s) {
+      if (c == '<') {
+        if (p != L.begin()) p--;
+      }
+      else if (c == '>') {
+        if (p != L.end()) p++;
+      }
+      else if (c == '-') {
+        if (p != L.begin()) {
+          p--;
+          p = L.erase(p);
         }
-
-        for(char k : L) cout << k;
-        cout<<'\n';
+      }
+      else
+        L.insert(p, c);      
     }
-
+    for (auto c : L) cout << c;
+    cout << '\n';
+  }
 }
