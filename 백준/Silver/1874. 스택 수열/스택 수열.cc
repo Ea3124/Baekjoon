@@ -20,9 +20,8 @@ int main() {
             V_v.push('+');
         }
 
-        if (num == S.top()){ // i) j=5, S.top = 5, num = 5
-//            cout<<S.top();
-            S.pop(); // i-2) j=5, S.top = 4, num = 5
+        if (num == S.top()){
+            S.pop();
             V_v.push('-');
         }
         else if (num != S.top()){
