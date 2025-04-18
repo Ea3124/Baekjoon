@@ -2,15 +2,8 @@ import sys
 
 input = sys.stdin.readline
 
-a= int(input())
-list = []
+a=i= int(input())
 
-for i in range(0,a):
-    for j in range(0,a-i-1):
-        list.append(" ")
-    
-    for k in range(a-i-1,a):
-        list.append("*")
-    
-    print(*list, sep='')
-    list = []
+while(i>0):
+    i=i-1
+    print(' '*i + '*'*(a-i))
